@@ -16,5 +16,12 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.x'
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - run: bundle install
+      - run: bundle exec ruby spec/meme_spec.rb
+        continue-on-error: true
+        timeout-minutes: 2
 
 
