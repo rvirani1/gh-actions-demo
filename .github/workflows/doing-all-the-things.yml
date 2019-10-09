@@ -23,5 +23,8 @@ jobs:
       - run: bundle exec ruby spec/meme_spec.rb
         continue-on-error: true
         timeout-minutes: 2
+      - run: echo $CODEWORD
+        env:
+          CODEWORD: ${{ secrets.CODEWORD }}
 
 
