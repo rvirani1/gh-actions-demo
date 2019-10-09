@@ -1,0 +1,20 @@
+name: "Doing all the things"
+on:
+  push:
+    branches:
+      - master
+env:
+  save: "me"
+jobs:
+  test:
+    name: "Run Tests"
+    if: true
+    runs-on: ubuntu-latest
+    env:
+      save: "for retiremen"
+    steps:
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.x'
+
+
